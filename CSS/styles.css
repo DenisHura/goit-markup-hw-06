@@ -1,0 +1,1009 @@
+/* Цвет вспомагательног текста #212121 */
+/* Цвет оосновного текста #757575 */
+/* Цвет лого #000000 */
+/* Цвет акцента #2196F3 */
+/* Белый цвет #FFFFFF */
+:root {
+  --portfolio-card-gap: 30px;
+
+  --client-logo-color: #afb1b8;
+  --icon-social-link-color: #afb1b8;
+  --icon-background-color: #f5f4fa;
+  --primary-text-color: #757575;
+  --primary-title-color: #212121;
+  --accent-color: #2196f3;
+  --logo-color: #000000;
+  --primary-white: #ffffff;
+  --button-hover-color: #188ce8;
+  --secondary-btn-color: #f5f4fa;
+  --team-section-background-color: #f5f4fa;
+  --border-header-color: #ececec;
+  --project-hover-text-color: #ffffff;
+  --modal-color: #ffffff;
+  --modal-title-color: #212121;
+  --modal-icon-color: #212121;
+  --describe-input-text-color: #ffffff;
+
+  --modal-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  --button-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+
+  --team-card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  --portfolio-card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+body {
+  color: var(--primary-text-color);
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.list {
+  list-style: none;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------------- Шапка сайта---------------- */
+.page-header {
+  background-color: var(--primary-white);
+  border-bottom: 1px solid var(--border-header-color);
+}
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav,
+.contact-list {
+  display: flex;
+}
+
+.contact-list {
+  margin-left: auto;
+}
+
+.site-nav .item:not(:last-child),
+.contact-list .item:not(:last-child) {
+  margin-right: 50px;
+}
+
+/* или можно использовать селектор соседа +,
+т.е. все элементы, у которых сверху есть сосед класса item. 
+.site-nav .item + .item{
+  margin-left: 10px;
+} */
+
+.logo {
+  font-weight: 700;
+  color: var(--logo-color);
+  font-family: Raleway, sans-serif;
+  font-size: 26px;
+  line-height: 1.19;
+  text-decoration: none;
+}
+
+.page-header .logo {
+  margin-right: 93px;
+}
+
+.logo-part {
+  color: var(--accent-color);
+}
+.contact-list .link {
+  display: flex;
+}
+
+.site-nav .link,
+.contact-list .link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+.site-nav .link {
+  color: var(--primary-title-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-list .link {
+  color: var(--primary-text-color);
+  align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-nav .link:hover,
+.contact-list .link:hover,
+.site-nav .link:focus,
+.contact-list .link:focus,
+.footer-contact-list .link:hover,
+.footer-contact-list .link:focus,
+.site-nav .current-link {
+  color: var(--accent-color);
+}
+
+.contact-list .item {
+  width: 100%;
+  height: 100%;
+}
+
+.icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.current-link.link {
+  position: relative;
+}
+
+.current-link::after {
+  position: absolute;
+
+  content: ' ';
+
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+}
+
+/* .contact-list .link::before {
+  content: '';
+  margin-right: 10px;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.contact-list .link-mail::before {
+  width: 16px;
+  height: 12px;
+  background-image: url(../images/envelope.svg);
+}
+
+.contact-list .link-tel::before {
+  width: 10px;
+  height: 16px;
+  background-image: url(../images/smartphone.svg);
+} */
+
+/* ---------------------------Герой-------------------- */
+.hero-title {
+  margin-bottom: 30px;
+
+  color: var(--primary-white);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* сделал временно, чисто для того, чтобы было видно текст */
+.hero {
+  text-align: center;
+  padding: 200px 0 200px 0;
+
+  background-color: #2f303a;
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/heroBanner.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* --------------------------Кнопки------------------------*/
+
+.button-list {
+  margin-top: 0;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.button-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.button {
+  text-align: center;
+  padding: 6px 22px;
+  border: none;
+
+  background-color: var(--secondary-btn-color);
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 73px;
+}
+
+.button.primary-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 32px;
+  min-width: 200px;
+
+  color: var(--primary-white);
+  background-color: var(--accent-color);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button.secondary-button {
+  color: var(--primary-title-color);
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button.secondary-button:hover,
+.button.secondary-button:focus {
+  color: var(--primary-white);
+  background-color: var(--accent-color);
+  box-shadow: var(--button-shadow);
+}
+
+.button.primary-button:hover,
+.button.primary-button:focus {
+  background-color: var(--button-hover-color);
+}
+
+/*-------------------------------Преимущества-------------------- */
+.benefit-section {
+  padding-bottom: 0;
+}
+.benefit-list {
+  display: flex;
+}
+
+/* calc((100% - кол-во марджинов в строке * кол-во марджинов) /  кол-во элементов в строке */
+.benefit-item {
+  width: calc((100% - 30px * 3) / 4);
+}
+
+.benefit-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.item-title {
+  margin-bottom: 10px;
+
+  color: var(--primary-title-color);
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+.icon-container {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+
+  background-color: var(--icon-background-color);
+}
+
+/* .benefit-item::before {
+  margin-bottom: 30px;
+
+  display: block;
+  width: 270px;
+  height: 120px;
+  content: '';
+  background-color: var(--icon-background-color);
+  background-size: 70px;
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+/* ---------------------------Чем мы занимаемся ------------------*/
+.section-title {
+  margin-bottom: 50px;
+
+  color: var(--primary-title-color);
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.reference-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* -----------------------------Наша Команда------------------ */
+.team-section {
+  background-color: var(--team-section-background-color);
+}
+
+.team-list {
+  display: flex;
+}
+
+.reference-item {
+  position: relative;
+}
+
+.reference-buttom {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.reference-buttom-text {
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--primary-white);
+}
+
+.team-item {
+  border-radius: 0px 0px 4px 4px;
+  background-color: var(--primary-white);
+
+  box-shadow: var(--team-card-shadow);
+}
+
+.team-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.team-item-bottom {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.name {
+  color: var(--primary-title-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  margin-bottom: 10px;
+}
+.position {
+  margin-bottom: 16px;
+
+  font-size: 16px;
+  line-height: 1.19;
+}
+
+.social-link-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.social-link-item {
+  width: 44px;
+  height: 44px;
+}
+
+.social-link-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--icon-social-link-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link-icon {
+  fill: currentColor;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+  color: var(--primary-white);
+}
+
+/*------------------------------Клиенты-------------------*/
+
+.client-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.client-link {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--client-logo-color);
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  color: var(--client-logo-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.client-icon {
+  fill: currentColor;
+}
+
+.client-link:hover,
+.client-link:focus {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/*--------------------------------Футер--------------------*/
+.footer {
+  background-color: #2f303a;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.footer .logo {
+  display: block;
+  margin-bottom: 20px;
+
+  color: var(--primary-white);
+}
+
+.address,
+.footer-contact-list .item:first-child {
+  margin-bottom: 9px;
+
+  color: var(--primary-white);
+  font-style: normal;
+}
+
+.footer-contact-list .link {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.14;
+  text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer .container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-join-block {
+  align-items: center;
+  margin-left: 70px;
+}
+
+.footer-join-text,
+.footer-discribe-text {
+  margin-bottom: 20px;
+
+  color: var(--primary-white);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.footer-social-list {
+  display: flex;
+}
+
+.footer-social-list .link {
+  color: var(--primary-white);
+  background-color: rgba(255, 255, 255, 0.1);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+  color: var(--primary-white);
+}
+
+.discribe-block {
+  margin-left: 93px;
+}
+
+.input-wrap {
+  display: flex;
+}
+
+.discribe-input {
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+  padding-left: 15px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+}
+
+.discribe-input::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.discribe-input:-webkit-autofill {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--describe-input-text-color);
+}
+
+.discribe-block .button {
+  position: relative;
+  display: flex;
+  min-width: 200px;
+  min-height: 50px;
+  padding-left: 29px;
+  padding-right: 28px;
+
+  text-align: center;
+  transition: background-color 255ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.discribe-block .button::after {
+  position: absolute;
+  top: 50%;
+  right: 28px;
+  transform: translateY(-50%);
+
+  background-image: url(../images/icon-send.svg);
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+}
+
+.discribe-block .button:hover {
+  background-color: var(--button-hover-color);
+}
+
+/*------------------------------Портфолио-------------------*/
+
+.project-title {
+  margin-bottom: 4px;
+
+  color: var(--primary-title-color);
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.project-type {
+  font-size: 16px;
+  line-height: 1.87;
+  color: var(--primary-text-color);
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-left: calc(-1 * var(--portfolio-card-gap));
+  margin-bottom: calc(-1 * var(--portfolio-card-gap));
+}
+
+.project-item {
+  flex-basis: calc(100% / 3 - var(--portfolio-card-gap));
+  margin-left: var(--portfolio-card-gap);
+  margin-bottom: var(--portfolio-card-gap);
+}
+
+/* calc((100% - кол-во марджинов в строке * кол-во марджинов) /  кол-во элементов в строке
+
+.project-item {
+  width: calc((100% - 60px) / 3);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.project-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.project-item:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+может быть еще вариант более сложных селекторов:
+в классе project-item всем элементам кроме каждого третьего установить отступ 30px (чтобы сначала не назначать, а потом не убирать отступы)
+.project-item:not(:nth-child(3n)){
+    margin-right: 30px;
+} */
+
+.project-item:hover {
+  box-shadow: var(--portfolio-card-shadow);
+}
+
+.project-item-bottom {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  background-color: var(--primary-white);
+
+  border: 1px solid #eeeeee;
+  border-top: none;
+}
+
+.project-item-link {
+  text-decoration: none;
+}
+
+/* .project-item-image {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.project-item-hover {
+  position: absolute;
+
+ 
+
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+
+  opacity: 0;
+}
+
+.project-hover-text {
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: var(--project-hover-text-color);
+}
+
+
+
+.project-item-image:hover::before,
+.project-item-hover:hover {
+  opacity: 1;
+} */
+
+.project-item-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-item-hover {
+  position: absolute;
+  top: 0px;
+  left: 24px;
+  right: 24px;
+
+  padding-top: 63px;
+
+  transform: translateY(100%);
+  transition: transform 255ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-item-image::before {
+  content: '';
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(100%);
+  transition: transform 255ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-hover-text {
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: var(--project-hover-text-color);
+}
+
+.project-item-link:hover .project-item-image::before,
+.project-item-link:hover .project-item-hover,
+.project-item-link:focus .project-item-image::before,
+.project-item-link:focus .project-item-hover {
+  transform: translateY(0);
+}
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+
+  transition: opacity 500ms, visibility 500ms;
+}
+
+.backdrop.is-hidden .modal {
+  transform: skew(50deg) translate(1200px);
+  transition: transform 500ms;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 528px;
+  min-height: 581px;
+  background-color: var(--modal-color);
+  box-shadow: var(--modal-shadow);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%);
+  transition: transform 500ms;
+
+  padding: 40px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  transition: color 255ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-icon {
+  fill: currentColor;
+}
+
+.modal-close:hover {
+  color: var(--accent-color);
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-form-title {
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: var(--modal-title-color);
+}
+
+.modal-form-label {
+  display: block;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  padding-right: 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  transition: border-color 255ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:-webkit-autofill {
+  -webkit-background-clip: text;
+}
+
+.modal-field {
+  margin-bottom: 10px;
+}
+
+.modal-form-text::placeholder {
+  font-size: 12px;
+  line-height: 1.17px;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-input-area {
+  position: relative;
+  color: var(--modal-icon-color);
+}
+
+.modal-icon {
+  display: inline-block;
+  position: absolute;
+
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  fill: currentColor;
+  transition: color 255ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-text {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  resize: none;
+  transition: border-color 255ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-field:last-child {
+  margin-bottom: 20px;
+}
+
+.modal-form-input:focus,
+.modal-form-text:focus {
+  border-color: var(--accent-color);
+}
+
+.modal-form-input:focus + .modal-icon {
+  color: var(--accent-color);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.check-item {
+  display: flex;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--modal-icon-color);
+  border-radius: 2px;
+  margin-left: 0px;
+  margin-right: 5px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-icon {
+  fill: var(--primary-white);
+}
+
+.checkbox-input:checked + .checkbox-label .check-item {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.checkbox-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+.checbox-field {
+  position: relative;
+}
+
+.checkbox-input.visually-hidden {
+  top: 12px;
+  left: 22px;
+}
